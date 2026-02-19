@@ -5,18 +5,7 @@ const spotifyPlayer = document.getElementById('spotify_player');
 
 let html5QrCode = null;
 
-button.addEventListener('click', async () => {
-    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-        try {
-            const permission = await DeviceOrientationEvent.requestPermission();
-            if (permission !== 'granted') {
-                alert('Musisz zezwolić na czujniki ruchu, inaczej gra nie zadziała!');
-                return;
-            }
-        } catch (error) {
-            console.error("Błąd uprawnień iOS:", error);
-        }
-    }
+button.addEventListener('click', () => {
 
     readerDiv.style.display = "block";
     spotifyContainer.style.display = "none";
@@ -38,23 +27,17 @@ button.addEventListener('click', async () => {
 function onScanSuccess(decodedText) {
     html5QrCode.stop().then(() => {
         readerDiv.style.display = "none";
+        
         let embedUrl = decodedText;
         if (embedUrl.includes("/track/")) {
             embedUrl = embedUrl.replace("/track/", "/embed/track/");
         }
+        
         spotifyPlayer.src = embedUrl;
-        button.innerText = "Zeskanowano! Odłóż telefon ekranem w dół";
-        button.style.background = "linear-gradient(135deg, #11998e, #38ef7d)"; 
-        window.addEventListener('deviceorientation', handleOrientation);
-    });
-}
-
-function handleOrientation(event) {
-    let beta = event.beta;
-    if (beta === null) return; 
-    if (Math.abs(beta) > 150) {
+        
         spotifyContainer.style.display = "block";
-        button.innerText = "Graj dalej!";
-        window.removeEventListener('deviceorientation', handleOrientation);
-    }
+        
+        button.innerText = "Wciśnij PLAY poniżej i zgaduj!";
+        button.style.background = "linear-gradient(135deg, #11998e, #38ef7d)"; 
+    });
 }
