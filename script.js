@@ -37,7 +37,8 @@ function onScanSuccess(decodedText) {
         
         spotifyContainer.style.display = "block";
         
-        button.innerText = "Wciśnij PLAY poniżej i zgaduj!";
+        button.innerText = "Graj dalej!";
         button.style.background = "linear-gradient(135deg, #11998e, #38ef7d)"; 
     });
+
 }
