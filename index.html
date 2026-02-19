@@ -19,11 +19,25 @@
 
 <div id="spotify_container" style="display: none; margin-top: 20px; width: 100%; max-width: 350px; position: relative;">
         
-        <div style="position: absolute; top: 0; left: 0; width: 73%; height: 100%; background-color: #121212; z-index: 10; display: flex; align-items: center; justify-content: center; border-radius: 12px 0 0 12px;">
+        <!-- <div style="position: absolute; top: 0; left: 0; width: 73%; height: 100%; background-color: #121212; z-index: 10; display: flex; align-items: center; justify-content: center; border-radius: 12px 0 0 12px;">
             <span style="color: #1db954; font-weight: bold; font-size: 15px; text-align: center;">
                 🙈 Tytuł ukryty<br>Kliknij Play po prawej 👉
             </span>
-        </div>
+        </div> -->
+
+        <div id="spotify_container" style="display: none; margin-top: 20px; width: 100%; max-width: 350px; position: relative; background-color: #121212; border-radius: 12px;">
+        
+        <iframe id="spotify_player" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 12px;"></iframe>
+        
+        <div style="position: absolute; top: 0; left: 0; width: 152px; height: 152px; background-color: #121212; z-index: 10;"></div>
+        
+        <div style="position: absolute; top: 0; right: 0; width: 200px; height: 95px; background-color: #121212; z-index: 10;"></div>
+        
+        <div style="position: absolute; top: 95px; right: 0px; width: 60px; height: 20px; background-color: #121212; z-index: 10;"></div>
+        
+        <div style="position: absolute; bottom: 0; left: 152px; width: 140px; height: 57px; background-color: #121212; z-index: 10;"></div>
+        
+    </div>
 
         <iframe id="spotify_player" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 12px;"></iframe>
     </div>
