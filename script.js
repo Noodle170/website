@@ -54,7 +54,7 @@ function handleOrientation(event) {
     if (beta === null) return; 
     if (Math.abs(beta) > 150) {
         spotifyContainer.style.display = "block";
-        button.innerText = "Wciśnij PLAY poniżej i zgaduj!";
+        button.innerText = "Graj dalej!";
         window.removeEventListener('deviceorientation', handleOrientation);
     }
 }
