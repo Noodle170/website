@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>HITSTER PATOLOGIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+
+    <h1>GRAJ!</h1>
+    
+    <div id="reader" style="width: 100%; max-width: 400px; display: none; border-radius: 15px; overflow: hidden; background-color: #222;"></div>
+
+    <button id="id_button">Skanuj QR</button>
+
+    <div id="spotify_container" style="display: none; margin-top: 20px; width: 100%; max-width: 350px;">
+        <iframe id="spotify_player" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
